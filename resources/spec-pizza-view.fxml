@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pizzabypatel.submenus.SpecPizzaController">
+    <children>
+        <ImageView fitHeight="500.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@img/Brick.png" />
+            </image></ImageView>
+        <VBox alignment="TOP_CENTER" spacing="20.0">
+            <children>
+                <VBox alignment="TOP_CENTER" maxWidth="310.0" prefWidth="300.0" style="-fx-background-color: #501A1A; -fx-background-radius: 20;">
+                    <VBox.margin>
+                        <Insets top="20.0" />
+                    </VBox.margin>
+                    <children>
+                        <Label text="Specialty Pizza" textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font size="37.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </VBox>
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                   <ImageView fx:id="pizzaImg" fitHeight="128.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,1) , 5, 0.0 , 0.0 , 0 );">
+                       <image>
+                           <Image url="@img/Deluxe.png" />
+                       </image>
+                   </ImageView>
+                  <ListView fx:id="ingredientsListView" prefHeight="200.0" prefWidth="150.0" style="-fx-background-color: #501A1A; -fx-background-radius: 20; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,1) , 5, 0.0 , 0.0 , 0 );;" />
+               </children>
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </HBox>
+            <ComboBox fx:id="pizzaTypeCB" onAction="#changePizzaType" prefWidth="150.0" style="-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,1) , 5, 0.0 , 0.0 , 0 );" />
+            <VBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <HBox alignment="TOP_CENTER" spacing="20.0" style="-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,1) , 5, 0.0 , 0.0 , 0 );">
+                     <children>
+                        <RadioButton mnemonicParsing="false" onAction="#smallRBOnClick" selected="true" text="Small" textFill="#e5decf">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="pizzaSize" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton mnemonicParsing="false" onAction="#mediumRBOnClick" text="Medium" textFill="#e5decf" toggleGroup="$pizzaSize" />
+                        <RadioButton mnemonicParsing="false" onAction="#largeRBOnClick" text="Large" textFill="#e5decf" toggleGroup="$pizzaSize" />
+                     </children>
+                  </HBox>
+                  <Label fx:id="sauceType" style="-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,1) , 5, 0.0 , 0.0 , 0 );" text="Sauce: Tomato" textFill="#e5decf">
+                     <font>
+                        <Font size="17.0" />
+                     </font></Label>
+                  <HBox alignment="TOP_CENTER" spacing="20.0" style="-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,1) , 5, 0.0 , 0.0 , 0 );">
+                     <children>
+                        <CheckBox fx:id="extraSauce" mnemonicParsing="false" onAction="#extraSauceOnClick" text="Extra Sauce" textFill="#e5decf" />
+                        <CheckBox fx:id="extraCheese" mnemonicParsing="false" onAction="#extraCheeseOnClick" text="Extra Cheese" textFill="#e5decf" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+
+            <VBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <HBox alignment="CENTER" spacing="10.0" style="-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0.0 , 0 );">
+                     <children>
+                        <Label text="Pirce: $" textAlignment="RIGHT" textFill="#e5decf" />
+                        <TextField fx:id="price" editable="false" promptText="Running Price" />
+                     </children>
+                  </HBox>
+                      <Button fx:id="addToOrderBtn" contentDisplay="TOP" graphicTextGap="10.0" onAction="#addToOrder" style="-fx-background-color: #501A1A; -fx-background-radius: 20; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0.0 , 0 );" text="Add to Order" textFill="#e5decf">
+                          <VBox.margin>
+                              <Insets />
+                          </VBox.margin>
+                          <opaqueInsets>
+                              <Insets />
+                          </opaqueInsets>
+                     <padding>
+                        <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+                     </padding>
+                      </Button>
+               </children></VBox>
+
+            </children>
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+        </VBox>
+
+    </children>
+</StackPane>

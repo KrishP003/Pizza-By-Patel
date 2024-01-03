@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pizzabypatel.submenus.StoreOrdersController">
+    <children>
+        <ImageView fitHeight="500.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@img/Brick.png" />
+            </image></ImageView>
+        <VBox alignment="TOP_CENTER" spacing="20.0">
+            <children>
+                <VBox alignment="TOP_CENTER" maxWidth="310.0" prefWidth="300.0" style="-fx-background-color: #501A1A; -fx-background-radius: 20;">
+                    <VBox.margin>
+                        <Insets top="20.0" />
+                    </VBox.margin>
+                    <children>
+                        <Label text="Store Orders" textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font size="37.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </VBox>
+                <VBox alignment="TOP_CENTER" spacing="10.0">
+                    <children>
+                  <HBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <VBox alignment="CENTER_RIGHT" spacing="10.0">
+                           <children>
+                                      <Label text="Order Number:" textAlignment="RIGHT" textFill="#e5decf" />
+                              <Label text="Order Total: $" textAlignment="RIGHT" textFill="#e5decf" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <ComboBox fx:id="orderNumPicker" onAction="#changeOrderNumber" prefWidth="150.0" promptText="Pick Order Number" />
+                              <TextField fx:id="orderTotal" editable="false" promptText="Order Total" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                        <ListView fx:id="pizzasInCurrOrder" editable="true" prefHeight="250.0" prefWidth="200.0" style="-fx-background-radius: 20;">
+                            <VBox.margin>
+                                <Insets left="20.0" right="20.0" />
+                            </VBox.margin>
+                        </ListView>
+                    </children>
+                </VBox>
+                <HBox alignment="CENTER" spacing="20.0" style="-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,1) , 5, 0.0 , 0.0 , 0 );">
+                    <children>
+                        <Button contentDisplay="TOP" graphicTextGap="10.0" onAction="#removeOrder" style="-fx-background-color: #501A1A; -fx-background-radius: 20; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0.0 , 0 );" text="Remove Order" textFill="#e5decf">
+                            <padding>
+                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                            </padding>
+                        </Button>
+                  <Button contentDisplay="TOP" graphicTextGap="10.0" layoutX="158.0" layoutY="10.0" onAction="#exportOrders" style="-fx-background-color: #501A1A; -fx-background-radius: 20; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0.0 , 0 );" text="Export Orders" textFill="#e5decf">
+                     <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </padding>
+                  </Button>
+
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+
+    </children>
+</StackPane>

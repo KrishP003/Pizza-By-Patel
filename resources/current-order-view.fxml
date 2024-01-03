@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pizzabypatel.submenus.CurrentOrderController">
+    <children>
+        <ImageView fitHeight="500.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@img/Brick.png" />
+            </image></ImageView>
+        <VBox alignment="TOP_CENTER" spacing="20.0">
+            <children>
+                <VBox alignment="TOP_CENTER" maxWidth="310.0" prefWidth="300.0" style="-fx-background-color: #501A1A; -fx-background-radius: 20;">
+                    <VBox.margin>
+                        <Insets top="20.0" />
+                    </VBox.margin>
+                    <children>
+                        <Label text="Your Current Order" textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font size="37.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </VBox>
+            <VBox alignment="TOP_CENTER" spacing="10.0">
+               <children>
+                      <HBox alignment="CENTER" spacing="10.0" style="-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0.0 , 0 );">
+                          <children>
+                              <Label text="Your Order Number:" textAlignment="RIGHT" textFill="#e5decf" />
+                              <TextField fx:id="orderNumber" editable="false" promptText="Order Number" />
+                          </children>
+                      </HBox>
+                  <ListView fx:id="pizzasInOrder" editable="true" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 20;">
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
+                  </ListView>
+                      <Button contentDisplay="TOP" graphicTextGap="10.0" onAction="#removePizzaFromCurrentOrder" style="-fx-background-color: #501A1A; -fx-background-radius: 20; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0.0 , 0 );" text="Remove Pizza" textFill="#e5decf">
+                </Button>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" spacing="10.0" style="-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,1) , 5, 0.0 , 0.0 , 0 );">
+               <children>
+                  <VBox alignment="CENTER_RIGHT" spacing="20.0">
+                     <children>
+                              <Label text="Subtotal: $" textAlignment="RIGHT" textFill="#e5decf" />
+                              <Label text="Sales Tax: $" textAlignment="RIGHT" textFill="#e5decf" />
+                              <Label text="Order Total: $" textAlignment="RIGHT" textFill="#e5decf" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_RIGHT" spacing="10.0">
+                     <children>
+                              <TextField fx:id="subtotal" editable="false" promptText="Sub Total" />
+                              <TextField fx:id="tax" editable="false" promptText="Tax" />
+                              <TextField fx:id="orderTotal" editable="false" promptText="Order Total" />
+                     </children>
+                  </VBox>
+                  <Button contentDisplay="TOP" graphicTextGap="10.0" onAction="#placeOrderToStore" style="-fx-background-color: #501A1A; -fx-background-radius: 20; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0.0 , 0 );" text="Place Order" textFill="#e5decf">
+                     <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </padding>
+                  </Button>
+
+               </children>
+            </HBox>
+            </children>
+        </VBox>
+
+    </children>
+</StackPane>
